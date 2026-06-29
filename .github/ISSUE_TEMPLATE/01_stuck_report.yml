@@ -1,0 +1,49 @@
+name: 🧱 ここで詰まった報告
+description: 「役に立った」より「どこで詰まったか」が知りたいです。一番ほしいフィードバックです。
+title: "[詰まり] "
+labels: ["詰まり報告"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ありがとうございます。**うまくいった話より、詰まった話のほうが何倍も価値があります。**
+        分かる範囲でOK。空欄があっても気にしないでください。
+  - type: dropdown
+    id: book
+    attributes:
+      label: どの冊子で詰まりましたか？
+      options:
+        - 01 操作の地図（Layer 0）
+        - 02 緊急・生存辞典
+        - 03 用語辞典
+        - そもそも入口・どれを開けばいいか分からなかった
+        - 分からない
+    validations:
+      required: false
+  - type: textarea
+    id: trying
+    attributes:
+      label: 何をしようとしていましたか？
+      placeholder: 例）AIが作ったアプリを、自分のPCで動かそうとしていた
+  - type: textarea
+    id: stuck
+    attributes:
+      label: どこで手が止まりましたか？／何が分からなくなりましたか？
+      description: ここが核心です。「辞書にこう書いてあったが、その言葉自体が分からなかった」でも大歓迎。
+      placeholder: 例）「ターミナルを開く」と書いてあったが、そのターミナルがどこにあるか分からなかった
+    validations:
+      required: true
+  - type: dropdown
+    id: os
+    attributes:
+      label: お使いのPC
+      options:
+        - Windows
+        - Mac
+        - その他
+        - 分からない
+  - type: textarea
+    id: shot
+    attributes:
+      label: スクショ（あれば）
+      placeholder: ここに画像をドラッグ＆ドロップできます。文字で説明しづらい時はこれが一番確実です。
