@@ -1,0 +1,33 @@
+AIアプリ開発 サバイバルキット
+Copyright (c) 2026 Piki
+
+この著作物（文章・ドキュメント）は
+Creative Commons Attribution 4.0 International License (CC BY 4.0)
+の下で提供されています。
+
+You are free to share and adapt this material for any purpose, even
+commercially, as long as you give appropriate credit, provide a link to
+the license, and indicate if changes were made.
+
+  - Human-readable summary : https://creativecommons.org/licenses/by/4.0/
+  - Full legal code        : https://creativecommons.org/licenses/by/4.0/legalcode
+
+You should have received a copy of the license along with this work.
+If not, see <https://creativecommons.org/licenses/by/4.0/>.
+
+----------------------------------------------------------------------
+クレジット表記の希望（再利用時はこの形でお願いします）:
+
+  「AIアプリ開発 サバイバルキット」by Piki — licensed under CC BY 4.0
+  Source: <ここにリポジトリのURLを貼る>
+  (改変した場合は、その旨を明記してください)
+----------------------------------------------------------------------
+
+補足（機能的スニペットについて):
+このリポジトリに含まれる些末な設定・コード断片
+（.github/ISSUE_TEMPLATE/*.yml, config.yml, コマンド例など）は、
+クレジット表記なしで自由に流用して構いません。
+
+※ GitHubのライセンス自動判定バッジを完全に点灯させたい場合は、
+   上記 legal code のURL先にある公式プレーンテキスト全文を、
+   この LICENSE に貼り付けてください（任意・法的効力は本ファイルでも同じ）。
