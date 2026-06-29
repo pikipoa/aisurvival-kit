@@ -1,1 +1,47 @@
-
+name: 🆘 エラーを持ち込む（一緒に直そう）
+description: 今まさに止まっているエラーを貼ってください。この辞書を使って一緒に直します。
+title: "[エラー] "
+labels: ["エラー持ち込み"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        **要約せず、エラーは全文そのまま貼ってください。** 削られた1行に原因が入っていることがあります。
+        ⚠️ パスワードやAPIキー（環境変数の中身）が混ざっていたら、**そこだけ伏せて**ください。
+  - type: textarea
+    id: error
+    attributes:
+      label: エラー全文
+      description: コピペでOK。長くて大丈夫です。
+      render: shell
+    validations:
+      required: true
+  - type: textarea
+    id: when
+    attributes:
+      label: どの操作の直後に出ましたか？
+      placeholder: 例）npm install と打って Enter した直後
+  - type: dropdown
+    id: where
+    attributes:
+      label: どこのログ／画面のエラーですか？
+      description: 分からなければ「分からない」でOK（それ自体が辞書の改善材料になります）。
+      options:
+        - ターミナル / PowerShell（自分のPC）
+        - ブラウザの F12 → Console
+        - ホスティング（Vercel等）の Logs
+        - 分からない
+  - type: dropdown
+    id: os
+    attributes:
+      label: お使いのPC
+      options:
+        - Windows
+        - Mac
+        - その他
+        - 分からない
+  - type: textarea
+    id: tried
+    attributes:
+      label: もう試したこと（あれば）
+      placeholder: 無ければ空欄でOK
