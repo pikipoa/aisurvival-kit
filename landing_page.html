@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>はじめての方へ ｜ AI Survival Kit</title>
+<style>
+  :root{
+    --ground:#E9E6DC;
+    --ground-2:#E2DECF;
+    --paper:#F2EFE6;
+    --ink:#23261F;
+    --ink-soft:#5A5C50;
+    --lost:#9E3B2E;
+    --arrive:#2E5A3A;
+    --trail:#274A5C;
+    --line:#C7C2B0;
+    --display:"Yu Mincho","YuMincho","Hiragino Mincho ProN","Hiragino Mincho Pro",serif;
+    --body:"Yu Gothic","YuGothic","Hiragino Kaku Gothic ProN","Noto Sans JP",system-ui,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;}
+  body{
+    background:#D7D3C4;font-family:var(--body);color:var(--ink);
+    line-height:1.85;padding:28px 14px 60px;
+    display:flex;justify-content:center;
+  }
+  .sheet{
+    width:100%;max-width:680px;background:var(--ground);
+    border:1.5px solid var(--ink);box-shadow:8px 8px 0 rgba(35,38,31,.18);
+    padding:40px 36px 34px;position:relative;
+  }
+  .sheet::before{
+    content:"";position:absolute;top:10px;left:10px;right:10px;bottom:10px;
+    border:1px solid var(--line);pointer-events:none;
+  }
+  .eyebrow{
+    font-size:11.5px;letter-spacing:.34em;font-weight:700;color:var(--trail);
+    text-transform:uppercase;display:flex;align-items:center;gap:10px;
+  }
+  .eyebrow::after{content:"";flex:1;height:1px;background:var(--line);}
+  h1{
+    font-family:var(--display);font-size:clamp(26px,6.6vw,38px);
+    line-height:1.3;font-weight:700;margin:16px 0 6px;
+  }
+  .lead{font-size:14px;color:var(--ink-soft);margin-bottom:30px;}
+
+  h2{
+    font-family:var(--display);font-size:clamp(19px,4.6vw,23px);
+    font-weight:700;margin:34px 0 14px;padding-bottom:8px;
+    border-bottom:1.5px solid var(--ink);
+  }
+  h2 .n{ color:var(--trail);font-size:.7em;margin-right:.5em;letter-spacing:.1em; }
+  p{ font-size:15px;margin:0 0 15px; }
+  p.q{ /* 初心者の心の声 */
+    color:var(--lost);font-weight:700;font-family:var(--display);
+    font-size:16px;margin-bottom:6px;
+  }
+  strong{ color:var(--ink); border-bottom:2px solid var(--arrive); padding-bottom:1px; }
+  em{ font-style:normal;color:var(--trail);font-weight:700; }
+
+  .callout{
+    background:var(--paper);border-left:4px solid var(--trail);
+    padding:16px 18px;margin:18px 0;font-size:14.5px;line-height:1.8;
+  }
+  .warn{ border-left-color:var(--lost); }
+  .warn b{ color:var(--lost); }
+
+  .steps{ list-style:none;counter-reset:s;margin:14px 0 6px; }
+  .steps li{
+    counter-increment:s;position:relative;padding:10px 0 10px 42px;
+    border-top:1px solid var(--line);font-size:14.5px;
+  }
+  .steps li::before{
+    content:counter(s);position:absolute;left:0;top:9px;
+    width:28px;height:28px;border:1.5px solid var(--trail);color:var(--trail);
+    border-radius:50%;display:flex;align-items:center;justify-content:center;
+    font-weight:700;font-size:14px;font-family:var(--display);
+  }
+
+  .cta{
+    margin-top:34px;background:var(--ink);color:var(--ground);
+    padding:24px 22px;text-align:center;
+  }
+  .cta p{ color:#D8D4C6;font-size:13.5px;margin-bottom:14px; }
+  .cta a{
+    display:inline-block;background:var(--arrive);color:#fff;text-decoration:none;
+    font-weight:700;font-size:16px;padding:13px 26px;letter-spacing:.04em;
+    border:1.5px solid #fff;
+  }
+  .cta .small{ margin:14px 0 0;font-size:11.5px;color:#A8A491;letter-spacing:.04em; }
+
+  .foot{ margin-top:26px;text-align:center;font-size:12px;color:var(--ink-soft); }
+  .foot .kit{ font-family:var(--display);color:var(--ink);font-size:13px; }
+
+  @media (max-width:480px){ .sheet{padding:32px 22px 26px;} p{font-size:14.5px;} }
+</style>
+</head>
+<body>
+  <main class="sheet">
+    <p class="eyebrow">AI Survival Kit ／ はじめての方へ</p>
+    <h1>AIでアプリを作り始めた、<br>あなたへの最初の地図。</h1>
+    <p class="lead">コードも用語も知らなかった人間が、公開まで辿り着いた記録です。</p>
+
+    <p>AIに「アプリを作って」とお願いすると、最初の数分は魔法みたいに進みます。でも、ほとんどの人が同じ場所で固まる。コードの中身ではなく、その<em>手前</em>で。</p>
+    <p>「ターミナルって、どれ？」「ログって、どこを見るの？」「“デプロイ手順”って書いてあるけど、結局なにをやればいいの？」――この“見えない段差”だけを集めたのが、このキットです。</p>
+
+    <!-- なぜGitHub -->
+    <h2><span class="n">01</span>なぜ、GitHub なんていう難しそうな場所に置いてあるの？</h2>
+
+    <p class="q">「リンクを開いたら、英語のファイルがズラーっと並んでて、“何これ…？”ってなった。」</p>
+    <p>その感覚、まったく正常です。むしろ、それを感じられた時点で、あなたはもう一歩“作る側”に近づいています。</p>
+
+    <p>正直に言います。<strong>大なり小なり「アプリを作る側」に回ったなら、GitHub は避けて通れない場所</strong>です。だから、ここで尻込みして引き返すより、<em>今のうちに、ちょっとだけ触れて慣れておく</em>。それ自体が、立派な第一歩になります。逃げ場所ではなく、通り道として用意しました。</p>
+
+    <div class="callout">
+      GitHub をひとことで言うなら――<br>
+      <b>世界中の作り手が、自分の作品や「こうすればもっと良くなる」というアイデアを、無料で持ち寄って置いている“共同の作業場”</b>です。<br>
+      だから、ここに通えるようになること自体が、「使うだけの人」から「作る側の人」への入口になります。
+    </div>
+
+    <p class="q">「じゃあ、ここに置いてあるものは全部すごいアイデアなの？」</p>
+    <div class="callout warn">
+      いいえ。ここが大事なところ。<b>全部が有能なアイデアばかりじゃありません。</b><br>
+      中には、針の穴を通すような――「それ、いつ使うの？」というくらいマニアックすぎる代物も、平気で転がっています（笑）。<br>
+      だから必要なのは、<b>“全部を取り込もうとしない目”</b>。世界中のアイデアの中から、<b>今の自分に本当に要るものだけを選ぶ</b>。これは、このキットがずっと伝えている考え方そのものです。
+    </div>
+
+    <p>AIも、GitHub も同じです。便利なものを“全部”飲み込もうとすると、かえって溺れる。<strong>「無いと死ぬもの」と「あると便利なだけのもの」を、自分で選り分ける</strong>。その目を持つための練習台として、まず GitHub に触れてみてください。</p>
+
+    <!-- なぜnoteじゃない -->
+    <h2><span class="n">02</span>なぜ note や有料 note じゃないの？</h2>
+    <p>「優しい入口にしたいなら、もっと読みやすい場所もあるのでは？」と思うかもしれません。それでも GitHub に置いたのには、理由があります。</p>
+    <p>読みやすくまとめた“商品”として売る形にすると、どうしても「続きは登録／購入で」という導線が生まれがちです。このキットは、<strong>そういう囲い込みの真逆</strong>を行きたい。<em>売り込みも、登録もなしで、ただ置いてある。</em>必要な人が、必要なところだけ持っていけばいい。GitHub は、それが一番自然にできる場所でした。</p>
+
+    <!-- 立ち位置：ウィキに似て、逆 -->
+    <h2><span class="n">03</span>「Wikipedia みたいなもの？」――半分そう、半分まったく逆。</h2>
+    <p>無料で、登録なしで読めて、みんなの力で少しずつ育っていく。その意味では、確かに Wikipedia に近い“公共物”を目指しています。</p>
+    <p>でも、決定的に違うところが2つあります。</p>
+    <div class="callout warn">
+      <b>① Wikipedia は「全部載せる」。このキットは「あえて削る」。</b><br>
+      百科事典は、できるだけ多くの知識を完全に集めようとします。でもこのキットは逆で、<b>「無いと死ぬもの」だけを残して、便利なだけのものは全部わざと隔離</b>しました。完全であろうとせず、<em>あえて小さく</em>あろうとしています。
+    </div>
+    <div class="callout warn">
+      <b>② Wikipedia は「正しい知識」を載せる。このキットは「失敗の記録」を載せる。</b><br>
+      ここに並ぶのは、きれいな正解集ではありません。<b>「自分はここで詰まった、転んだ、死にかけた」という生の記録</b>です。客観的な百科事典ではなく、<em>一人称の“遭難日記”</em>に近い。だから、読んでいて「あ、それ自分も…」と笑えるはずです。
+    </div>
+    <p><strong>みんなで育てる公共物なのに、あえて小さく、あえて失敗を晒す。</strong>このちぐはぐさが、このキットの個性です。</p>
+
+    <!-- どんな人向け -->
+    <h2><span class="n">04</span>そもそも、これは“どんな人”向け？</h2>
+    <p>AIでサイトやアプリを作るとき、大きく2つのタイプに分かれます。</p>
+    <div class="callout">
+      <b>① 用意された枠に、文字や画像を入れて作る人</b><br>
+      （BASE や Wix など。コードはほぼ触りません）<br><br>
+      <b>② 中身のコードにも手を入れて作る人</b><br>
+      （Shopify のテーマ改造や、AI にアプリを作らせる、など）
+    </div>
+    <p>このキットが効くのは、主に <strong>② の人</strong>です。①だけで完結している人には、正直あまり刺さりません。<em>――そこは、正直に。</em></p>
+    <p>――ただ、①の人が「もう少し自分でいじってみたい」と ② に踏み出す。<strong>その時には、最初の一歩の地図になれると思います。</strong></p>
+
+    <!-- 触り方 -->
+    <h2><span class="n">05</span>開いたら、まずこれだけ。</h2>
+    <p>難しいことは要りません。最初にやることは、たった3つ。</p>
+    <ol class="steps">
+      <li>上に並ぶ<b>英語のファイル名は、いったん無視</b>してOK。あれは“置き場所”です。</li>
+      <li>ページを下にスクロールすると、<b>日本語の説明（README）</b>が出てきます。読むのはそこから。</li>
+      <li>迷ったら、まず <b>「02 緊急・生存辞典」</b> を開く。今あなたが固まっている症状から引けます。</li>
+    </ol>
+
+    <!-- CTA -->
+    <div class="cta">
+      <p>準備はいりません。まずは、のぞいてみるだけ。</p>
+      <a href="https://github.com/pikipoa/aisurvival-kit">地図を開く（無料・登録不要）</a>
+      <p class="small">github.com/pikipoa/aisurvival-kit</p>
+    </div>
+
+    <div class="foot">
+      <p class="kit">AI Survival Kit</p>
+      <p>遭難しないための地図を、あなたの“詰まり”で育てています。</p>
+    </div>
+  </main>
+</body>
+</html>
